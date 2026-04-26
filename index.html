@@ -3,329 +3,650 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Metalthlon – Metal Recycling &amp; Raw Material Sourcing</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMTQxNDE0IiByeD0iNSIvPjxwYXRoIGQ9Ik01IDI1VjlsNS41IDcgNS41LTYuNSA1LjUgNi41TDI3IDl2MTZoLTMuNVYxNmwtNCA1LTQuNS01LjUtNC41IDUuNS00LTV2OXoiIGZpbGw9IiNCMDdENEEiLz48L3N2Zz4="/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<title>Metalthlon – Global Trading of Metals & Recycled Raw Materials</title>
+<meta name="description" content="Metalthlon connects global suppliers and industrial buyers through reliable sourcing, compliant operations, and efficient logistics — across metals, polymers, batteries, and RDF."/>
+<link rel="icon" type="image/png" href="./logo.PNG"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#141414;--ink2:#2A2A2A;--surface:#F5F2EE;--white:#FFFFFF;
-  --copper:#B07D4A;--copper-light:#C9964F;--copper-pale:#F0E6D3;
-  --steel:#4A5568;--border:rgba(0,0,0,0.10);--radius:4px;
+  --ink:#1F2937;
+  --ink2:#2A3441;
+  --ink-deep:#141B23;
+  --surface:#F5F2EE;
+  --surface-alt:#FAFAFA;
+  --white:#FFFFFF;
+  --orange:#E87722;
+  --orange-light:#F39A4F;
+  --orange-pale:#FDF1E5;
+  --copper:#B07D4A;
+  --copper-light:#C9964F;
+  --steel:#4A5568;
+  --grey-mid:#6B7280;
+  --border:rgba(0,0,0,0.10);
+  --radius:4px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Barlow',sans-serif;color:var(--ink);background:var(--surface);line-height:1.6}
-nav{background:var(--ink);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;border-bottom:2px solid var(--copper)}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px;color:var(--white);letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:flex;align-items:center}
-.nav-logo span{color:var(--copper-light)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;letter-spacing:1px;text-transform:uppercase;font-weight:500;transition:color 0.2s}
-.nav-links a:hover{color:var(--copper-light)}
-.nav-cta{background:var(--copper);color:var(--white)!important;padding:8px 20px;border-radius:var(--radius)}
-.nav-cta:hover{background:var(--copper-light)!important}
-section{scroll-margin-top:64px}
-.hero{background:var(--ink);background-image:linear-gradient(to right,rgba(20,20,20,0.97) 40%,rgba(20,20,20,0.55)),url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80");background-size:cover;background-position:center;padding:96px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;right:0;top:0;width:45%;height:100%;background:repeating-linear-gradient(-45deg,transparent,transparent 6px,rgba(176,125,74,0.07) 6px,rgba(176,125,74,0.07) 7px)}
-.hero-inner{max-width:700px;position:relative}
-.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--copper-light);margin-bottom:16px}
+
+/* ===== TOP HEADER ===== */
+.top-header{background:var(--ink-deep);padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.05)}
+.top-header-logo{display:flex;align-items:center}
+.top-header-logo img{height:88px;width:auto;display:block}
+.top-header-tagline{text-align:right;font-family:'Barlow Condensed',sans-serif;letter-spacing:2px}
+.top-header-tagline .line1{font-size:14px;color:rgba(255,255,255,0.85);font-weight:500;text-transform:uppercase}
+.top-header-tagline .line2{font-size:14px;color:var(--orange);font-weight:700;text-transform:uppercase;margin-top:4px}
+
+/* ===== NAVIGATION ===== */
+nav{background:var(--ink);position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:0 48px;height:56px;border-bottom:2px solid var(--orange)}
+.nav-links{display:flex;gap:0;list-style:none;width:100%;max-width:1400px;justify-content:space-between}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;transition:color 0.2s;padding:18px 6px;display:inline-block;position:relative;white-space:nowrap}
+.nav-links a:hover{color:var(--orange-light)}
+.nav-links a.active{color:var(--orange)}
+.nav-links a.active::after{content:'';position:absolute;left:6px;right:6px;bottom:-2px;height:2px;background:var(--orange)}
+
+section{scroll-margin-top:120px}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:var(--ink-deep);overflow:hidden;min-height:560px;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(to right,rgba(20,27,35,0.97) 40%,rgba(20,27,35,0.55) 100%),url("./copper.jpeg");background-size:cover;background-position:center;z-index:0}
+.hero::before{content:'';position:absolute;right:0;top:0;width:30%;height:100%;background:repeating-linear-gradient(-45deg,transparent,transparent 6px,rgba(232,119,34,0.06) 6px,rgba(232,119,34,0.06) 7px);z-index:1}
+.hero-inner{max-width:760px;position:relative;z-index:2;padding:80px 48px}
+.hero-logo{margin-bottom:32px}
+.hero-logo img{height:120px;width:auto;display:block;filter:drop-shadow(0 6px 24px rgba(0,0,0,0.5))}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;font-weight:700}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:62px;line-height:1.05;color:var(--white);text-transform:uppercase;letter-spacing:1px;margin-bottom:24px}
-.hero h1 em{color:var(--copper-light);font-style:normal}
-.hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:520px;margin-bottom:40px;line-height:1.7}
-.btn-primary{display:inline-block;background:var(--copper);color:var(--white);text-decoration:none;padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border-radius:var(--radius)}
-.btn-outline{display:inline-block;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);text-decoration:none;padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border-radius:var(--radius);margin-left:12px}
-.btn-outline:hover{border-color:var(--copper-light);color:var(--copper-light)}
-.stats-bar{background:var(--copper);padding:20px 48px;display:flex;gap:0;justify-content:space-around}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero h1 .accent-line{display:inline-block;width:80px;height:3px;background:var(--orange);margin:18px 0 0;vertical-align:middle}
+.hero p{font-size:17px;color:rgba(255,255,255,0.82);max-width:540px;margin-bottom:36px;line-height:1.7}
+
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--white);text-decoration:none;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius);transition:background 0.2s}
+.btn-primary:hover{background:var(--orange-light)}
+.btn-primary svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5}
+.btn-outline{display:inline-block;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.85);text-decoration:none;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius);margin-left:10px;transition:all 0.2s}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange)}
+
+/* ===== TRUST PILLARS BAR ===== */
+.trust-bar{background:var(--ink2);padding:28px 48px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1400px;margin:0 auto}
+.trust-item{display:flex;align-items:center;gap:16px;padding-right:24px;border-right:1px solid rgba(255,255,255,0.08)}
+.trust-item:last-child{border-right:none}
+.trust-icon{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.trust-icon svg{width:34px;height:34px;stroke:var(--orange);fill:none;stroke-width:1.5}
+.trust-text strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--white);margin-bottom:4px}
+.trust-text span{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.45}
+
+/* ===== STATS BAR ===== */
+.stats-bar{background:var(--orange);padding:18px 48px;display:flex;gap:0;justify-content:space-around}
 .stat-item{text-align:center}
-.stat-item .num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:var(--white);line-height:1}
-.stat-item .lbl{font-size:12px;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+.stat-item .num{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--white);line-height:1}
+.stat-item .lbl{font-size:11px;color:rgba(255,255,255,0.85);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;font-weight:500}
+
+/* ===== SECTIONS ===== */
 .sec{padding:80px 48px}
 .sec.alt{background:var(--white)}
-.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);margin-bottom:8px}
+.sec-inner{max-width:1400px;margin:0 auto}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:8px;font-weight:600}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:42px;text-transform:uppercase;line-height:1.05;color:var(--ink);margin-bottom:12px}
-.sec-sub{font-size:16px;color:var(--steel);max-width:560px;margin-bottom:56px;line-height:1.7}
-.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.product-card{background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
-.pc-img{width:100%;height:160px;object-fit:cover;display:block}
-.product-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-2px);transition:all 0.2s}
-.pc-header{background:var(--ink2);padding:32px 32px 24px;display:flex;align-items:flex-start;gap:20px}
-.pc-icon{width:48px;height:48px;background:var(--copper);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pc-icon svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2}
-.pc-header h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;color:var(--white);letter-spacing:0.5px;margin-bottom:4px}
-.pc-header p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.5}
-.pc-body{padding:28px 32px 32px;flex:1;display:flex;flex-direction:column}
-.pc-body>p{font-size:15px;color:var(--steel);line-height:1.7;margin-bottom:24px}
-.tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.tags li{background:var(--copper-pale);color:var(--copper);font-size:12px;font-weight:500;letter-spacing:0.5px;padding:5px 12px;border-radius:2px;text-transform:uppercase}
-.card-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:var(--copper);text-decoration:none;font-weight:600;border-top:1px solid var(--border);padding-top:20px}
-.card-link svg{width:16px;height:16px}
+.sec-sub{font-size:16px;color:var(--steel);max-width:680px;margin-bottom:48px;line-height:1.7}
+
+/* ===== PRODUCT CARDS — 3 across, wraps ===== */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product-card{background:var(--white);border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:all 0.25s}
+.product-card:hover{box-shadow:0 12px 32px rgba(0,0,0,0.10);transform:translateY(-3px)}
+.pc-title{padding:20px 22px 12px}
+.pc-title h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;color:var(--orange);letter-spacing:1px;line-height:1.15}
+.pc-title h3 small{display:block;color:var(--ink);font-size:14px;font-weight:600;margin-top:2px;letter-spacing:0.5px}
+.pc-img{width:100%;height:180px;object-fit:cover;display:block}
+.pc-body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column}
+.pc-list{list-style:none;margin-bottom:18px}
+.pc-list li{font-size:14px;color:var(--steel);padding:3px 0 3px 14px;position:relative;line-height:1.5}
+.pc-list li::before{content:'';position:absolute;left:0;top:11px;width:5px;height:5px;background:var(--orange);border-radius:50%}
+.card-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);text-decoration:none;font-weight:700;border-top:1px solid var(--border);padding-top:14px}
+.card-link svg{width:14px;height:14px;transition:transform 0.2s}
+.card-link:hover svg{transform:translateX(3px)}
+
+/* ===== SERVICES ===== */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.svc-card{border:1px solid var(--border);border-radius:6px;padding:32px 28px;background:var(--surface);transition:border-color 0.2s}
-.svc-card:hover{border-color:var(--copper)}
-.svc-num{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:700;color:var(--copper-pale);line-height:1;margin-bottom:16px}
+.svc-card{border:1px solid var(--border);border-radius:6px;padding:32px 28px;background:var(--surface);transition:border-color 0.2s,transform 0.2s}
+.svc-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.svc-num{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:700;color:var(--orange-pale);line-height:1;margin-bottom:16px}
 .svc-card h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:12px;letter-spacing:0.5px}
 .svc-card p{font-size:14px;color:var(--steel);line-height:1.7}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;width:100%}
-.why-points{list-style:none;display:flex;flex-direction:column;gap:20px;width:100%}
-.why-point{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--surface);border-left:3px solid var(--copper);border-radius:0 4px 4px 0;width:100%;box-sizing:border-box}
-.why-icon{width:36px;height:36px;background:var(--copper);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+
+/* ===== SUSTAINABILITY BANNER ===== */
+.sustain-bar{background:var(--ink-deep);display:grid;grid-template-columns:auto 1fr;align-items:stretch}
+.sustain-left{background:var(--orange);padding:28px 48px;display:flex;align-items:center;gap:20px;clip-path:polygon(0 0,100% 0,calc(100% - 30px) 100%,0 100%);padding-right:78px}
+.sustain-left svg{width:38px;height:38px;stroke:#fff;fill:none;stroke-width:1.5;flex-shrink:0}
+.sustain-left .stext{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:1px;line-height:1.15}
+.sustain-right{padding:24px 48px 24px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;align-items:center}
+.sustain-item{display:flex;align-items:center;gap:14px}
+.sustain-icon{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.sustain-icon svg{width:30px;height:30px;stroke:rgba(255,255,255,0.9);fill:none;stroke-width:1.5}
+.sustain-text strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#fff;margin-bottom:2px}
+.sustain-text span{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4}
+
+/* ===== ABOUT/WHY ===== */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.why-points{list-style:none;display:flex;flex-direction:column;gap:18px}
+.why-point{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--surface);border-left:3px solid var(--orange);border-radius:0 4px 4px 0}
+.why-icon{width:36px;height:36px;background:var(--orange);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .why-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2}
 .why-point strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);margin-bottom:4px}
 .why-point span{font-size:14px;color:var(--steel)}
-.why-visual{background:var(--ink);border-radius:6px;padding:48px 40px;display:flex;flex-direction:column;gap:28px;height:100%}
-.why-visual-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--copper-light)}
-.metric-row{display:flex;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.07)}
-.metric-row:last-child{border-bottom:none;padding-bottom:0}
-.metric .val{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;color:var(--white);line-height:1}
-.metric .val span{color:var(--copper-light)}
-.metric .label{font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-.cta-banner{background:var(--copper);padding:56px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
-.cta-banner-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
-.cta-banner-title{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1.05}
-.cta-banner-btn{display:inline-block;background:var(--white);color:var(--copper);text-decoration:none;padding:14px 36px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius);white-space:nowrap}
-.contact-wrap{background:var(--ink);padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contact-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--copper-light);margin-bottom:12px}
+
+/* By the numbers — denser */
+.numbers-panel{background:var(--ink);border-radius:6px;padding:36px 32px;display:flex;flex-direction:column;gap:24px;height:100%}
+.numbers-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--orange-light);margin-bottom:4px}
+.numbers-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px}
+.num-cell{padding:14px 0;border-top:1px solid rgba(255,255,255,0.07)}
+.num-cell:nth-child(-n+2){border-top:none;padding-top:0}
+.num-cell .val{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;color:var(--white);line-height:1}
+.num-cell .val span{color:var(--orange-light)}
+.num-cell .label{font-size:11.5px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:1px;margin-top:4px;line-height:1.4}
+
+/* ===== MARKETS ===== */
+.markets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.market-card{background:var(--white);border:1px solid var(--border);padding:26px 24px;border-radius:6px;display:flex;flex-direction:column;gap:10px;transition:all 0.2s}
+.market-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.market-card .region{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);font-weight:700}
+.market-card h4{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;color:var(--ink)}
+.market-card p{font-size:13.5px;color:var(--steel);line-height:1.55}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{background:var(--orange);padding:48px 48px}
+.cta-banner-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.cta-banner-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:8px;font-weight:600}
+.cta-banner-title{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1.05}
+.cta-banner-btn{display:inline-block;background:var(--white);color:var(--orange);text-decoration:none;padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius);white-space:nowrap;transition:all 0.2s}
+.cta-banner-btn:hover{background:var(--ink);color:#fff}
+
+/* ===== CONTACT ===== */
+.contact-wrap{background:var(--ink);padding:80px 48px}
+.contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--orange-light);margin-bottom:12px;font-weight:600}
 .contact-wrap h2{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:700;text-transform:uppercase;color:var(--white);line-height:1.05;margin-bottom:16px}
-.contact-wrap h2 em{color:var(--copper-light);font-style:normal}
-.contact-wrap>div>p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:36px}
+.contact-wrap h2 em{color:var(--orange);font-style:normal}
+.contact-wrap>div p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:36px}
 .contact-details{display:flex;flex-direction:column;gap:16px}
-.contact-detail{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,0.7)}
+.contact-detail{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,0.75)}
 .cd-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cd-icon svg{width:16px;height:16px;stroke:var(--copper-light);fill:none;stroke-width:2}
+.cd-icon svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:2}
 .contact-form{display:flex;flex-direction:column;gap:16px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-group{display:flex;flex-direction:column;gap:6px}
-.form-group label{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.form-group label{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45)}
 .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:12px 14px;color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;outline:none;resize:none}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--copper)}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--orange)}
 .form-group select option{background:var(--ink2)}
-.form-submit{background:var(--copper);color:var(--white);border:none;padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:2px;text-transform:uppercase;font-weight:600;border-radius:var(--radius);cursor:pointer;align-self:flex-start}
-.form-submit:hover{background:var(--copper-light)}
-footer{background:#0D0D0D;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.06)}
-.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);display:flex;align-items:center}
-.footer-logo span{color:var(--copper-light)}
-.footer-links{display:flex;gap:24px}
-.footer-links a{color:rgba(255,255,255,0.35);font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:1px}
-.footer-links a:hover{color:var(--copper-light)}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+.form-submit{background:var(--orange);color:var(--white);border:none;padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:15px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius);cursor:pointer;align-self:flex-start;transition:background 0.2s}
+.form-submit:hover{background:var(--orange-light)}
+
+/* ===== FOOTER (white background → use logo3) ===== */
+footer{background:var(--white);padding:48px 48px 28px;border-top:1px solid var(--border)}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.footer-logo img{height:80px;width:auto;display:block}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{color:var(--steel);font-size:12.5px;text-decoration:none;text-transform:uppercase;letter-spacing:1.2px;font-family:'Barlow Condensed',sans-serif;font-weight:600}
+.footer-links a:hover{color:var(--orange)}
+.footer-bottom{max-width:1400px;margin:32px auto 0;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--grey-mid);flex-wrap:wrap;gap:12px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .markets-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .sustain-right{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:768px){
-  nav{padding:0 20px}.nav-links{display:none}
-  .hero{padding:60px 20px}.hero h1{font-size:40px}
-  .stats-bar{padding:16px 20px;flex-wrap:wrap;gap:16px}
+  .top-header{flex-direction:column;gap:14px;padding:18px 20px;text-align:center}
+  .top-header-logo img{height:64px}
+  .top-header-tagline{text-align:center}
+  nav{padding:0 16px;height:auto;overflow-x:auto}
+  .nav-links{gap:4px;justify-content:flex-start;padding:8px 0}
+  .nav-links a{padding:10px 6px;font-size:12px;white-space:nowrap}
+  .hero-inner{padding:50px 20px}
+  .hero h1{font-size:38px}
+  .hero-logo img{height:80px}
+  .stats-bar{padding:14px 20px;flex-wrap:wrap;gap:14px}
   .sec{padding:56px 20px}
-  .product-grid,.services-grid,.why-grid,.contact-wrap{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:16px;text-align:center;padding:32px 20px}
+  .product-grid,.services-grid,.markets-grid{grid-template-columns:1fr}
+  .why-grid,.contact-inner{grid-template-columns:1fr;gap:40px}
+  .form-row,.numbers-grid{grid-template-columns:1fr}
+  .sustain-bar{grid-template-columns:1fr}
+  .sustain-left{clip-path:none;padding:24px 20px}
+  .sustain-right{padding:24px 20px;grid-template-columns:1fr}
+  .contact-wrap{padding:56px 20px}
+  footer{padding:32px 20px 20px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-logo img{height:64px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .cta-banner{padding:40px 20px}
 }
 </style>
 </head>
 <body>
+
+<!-- ===== TOP HEADER (dark bg → logo.PNG which is on dark) ===== -->
+<header class="top-header">
+  <a href="#home" class="top-header-logo">
+    <img src="./logo.PNG" alt="Metalthlon — Strength. Value. Trust."/>
+  </a>
+  <div class="top-header-tagline">
+    <div class="line1">Metals. Plastics. Resources.</div>
+    <div class="line2">Trusted Globally.</div>
+  </div>
+</header>
+
+<!-- ===== NAVIGATION ===== -->
 <nav>
-  <a href="#home" class="nav-logo"><svg width="28" height="22" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:8px;vertical-align:middle;flex-shrink:0"><path d="M2 26V4l6 8 8-9 8 9 6-8v22h-4V14l-2 3-8-9-8 9-2-3v12z" fill="#B07D4A"/></svg>Metalth<span>lon</span></a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#company">Company</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#metals">Metals Desk</a></li>
+    <li><a href="#polymers">Polymers Desk</a></li>
+    <li><a href="#batteries">Batteries (Basel)</a></li>
+    <li><a href="#logistics">Logistics &amp; Compliance</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- ===== HERO (dark bg → logo.PNG) ===== -->
 <section id="home">
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-label">Metals &amp; Recycling Solutions</div>
-    <h1>Sourcing &amp;<br/><em>Recycling</em><br/>Done Right</h1>
-    <p>Metalthlon connects businesses with reliable scrap metal recycling, lead &amp; battery processing, and raw material sourcing across European markets.</p>
-    <a href="#products" class="btn-primary">View Products</a>
-    <a href="#contact" class="btn-outline">Request a Quote</a>
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-logo"><img src="./logo.PNG" alt="Metalthlon"/></div>
+      <div class="hero-label">Strength. Value. Trust.</div>
+      <h1>Global Trading of<br/><em>Metals</em> &amp; Recycled<br/>Raw Materials<br/><span class="accent-line"></span></h1>
+      <p>We connect global suppliers and industrial buyers through reliable sourcing, compliant operations, and efficient logistics solutions across metals, polymers, batteries, and refuse-derived fuel.</p>
+      <a href="#contact" class="btn-primary">Contact Our Desk
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+      <a href="#metals" class="btn-outline">Explore Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST PILLARS ===== -->
+<div class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+      </div>
+      <div class="trust-text"><strong>Global Network</strong><span>Strong partnerships across key industrial regions.</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path stroke-linecap="round" d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="trust-text"><strong>Compliance</strong><span>Full compliance with international trade and environmental standards.</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M5 17c2-1.5 4-1.5 6 0s4 1.5 6 0M9 9c1-1 2-1 3 0s2 1 3 0"/></svg>
+      </div>
+      <div class="trust-text"><strong>Reliable Supply</strong><span>Consistent quality and long-term supply agreements.</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7h13v10H3zM16 10h4l1 3v4h-5"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      </div>
+      <div class="trust-text"><strong>Efficient Logistics</strong><span>Worldwide shipping with flexible terms and solutions.</span></div>
+    </div>
   </div>
 </div>
+
+<!-- ===== STATS BAR ===== -->
 <div class="stats-bar">
   <div class="stat-item"><div class="num">15+</div><div class="lbl">Years Experience</div></div>
-  <div class="stat-item"><div class="num">500+</div><div class="lbl">Clients Served</div></div>
-  <div class="stat-item"><div class="num">12K+</div><div class="lbl">Tonnes Processed</div></div>
-  <div class="stat-item"><div class="num">98%</div><div class="lbl">Client Retention</div></div>
+  <div class="stat-item"><div class="num">4</div><div class="lbl">Continents Served</div></div>
+  <div class="stat-item"><div class="num">12K+</div><div class="lbl">Tonnes Traded</div></div>
+  <div class="stat-item"><div class="num">100%</div><div class="lbl">Documented Shipments</div></div>
 </div>
-</section>
 
-<section id="products" class="sec alt">
-  <div class="sec-label">What We Handle</div>
-  <div class="sec-title">Our Product Range</div>
-  <p class="sec-sub">From ferrous and non-ferrous scrap to lead batteries and raw material procurement, we manage the full metal value chain with transparency and efficiency.</p>
-  <div class="product-grid">
+<!-- ===== TRADING DESKS — 6 product cards ===== -->
+<section id="metals" class="sec alt">
+  <div class="sec-inner">
+    <div class="sec-label">What We Trade</div>
+    <div class="sec-title">Our Trading Desks</div>
+    <p class="sec-sub">From non-ferrous metals and lead derivatives to recycled polymers, batteries, refuse-derived fuel, and end-to-end logistics — Metalthlon manages the full value chain with transparency and global reach.</p>
 
-    <div class="product-card">
-      <img class="pc-img" src="scrap.jpg" alt="Scrap Metal" loading="lazy"/>
-      <div class="pc-header">
-        <div class="pc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3h14M5 3a2 2 0 00-2 2v16a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2M5 3l2 4h10l2-4"/></svg></div>
-        <div><h3>Scrap Metal</h3><p>Ferrous &amp; non-ferrous collection and processing</p></div>
+    <div class="product-grid">
+
+      <!-- 1. ALUMINIUM & COPPER -->
+      <div class="product-card">
+        <div class="pc-title"><h3>Aluminium &amp; Copper<small>Various Grades</small></h3></div>
+        <img class="pc-img" src="./copper.jpeg" alt="Copper wire and aluminium scrap" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>Aluminium scrap &amp; UBC</li>
+            <li>Copper wire &amp; cable scrap</li>
+            <li>Various grades &amp; specs</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="pc-body">
-        <p>We collect, sort, and process ferrous and non-ferrous scrap from industrial and commercial sources, ensuring maximum material recovery and compliance with waste regulations.</p>
-        <ul class="tags"><li>Steel Scrap</li><li>Cast Iron</li><li>Aluminium Scrap</li><li>Stainless Steel</li><li>Mixed Non-Ferrous</li></ul>
-        <a href="#contact" class="card-link">Request availability <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+      <!-- 2. LEAD MATERIALS -->
+      <div class="product-card" id="lead">
+        <div class="pc-title"><h3>Lead Materials<small>Refined &amp; Remelted</small></h3></div>
+        <img class="pc-img" src="./bullions_2.jpeg" alt="Refined lead bullion blocks" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>Remelted lead ingots</li>
+            <li>Lead bullion</li>
+            <li>PbSb alloys</li>
+            <li>Refined lead</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
+
+      <!-- 3. RECYCLED PLASTICS -->
+      <div class="product-card" id="polymers">
+        <div class="pc-title"><h3>Recycled Plastics<small>Regrind &amp; Granules</small></h3></div>
+        <img class="pc-img" src="./PP_chips_1.JPG" alt="Recycled PP regrind / chips" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>Recycled PP (incl. battery streams)</li>
+            <li>LDPE scrap</li>
+            <li>HDPE scrap</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. BATTERIES (BASEL) -->
+      <div class="product-card" id="batteries">
+        <div class="pc-title"><h3>Batteries (Basel)<small>Compliant Trade</small></h3></div>
+        <img class="pc-img" src="./scrap.jpeg" alt="Scrap lead-acid batteries on pallet for compliant trade" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>Lead-acid batteries</li>
+            <li>UPS &amp; industrial batteries</li>
+            <li>Basel-compliant procedures</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. RDF / SRF — NEW 6th category -->
+      <div class="product-card" id="rdf">
+        <div class="pc-title"><h3>RDF / SRF<small>Refuse-Derived Fuel</small></h3></div>
+        <img class="pc-img" src="./191212_1.jpeg" alt="Baled refuse-derived fuel ready for cement kilns" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>Baled RDF (EWC 19 12 10)</li>
+            <li>Solid Recovered Fuel (SRF)</li>
+            <li>Cement-kiln &amp; WtE grade</li>
+            <li>Calorific spec on request</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. LOGISTICS & COMPLIANCE -->
+      <div class="product-card" id="logistics">
+        <div class="pc-title"><h3>Logistics &amp; Compliance<small>Worldwide Shipping</small></h3></div>
+        <img class="pc-img" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=800&q=80" alt="Container ship and global logistics" loading="lazy"/>
+        <div class="pc-body">
+          <ul class="pc-list">
+            <li>FOB, CIF, CFR, EXW terms</li>
+            <li>Export documentation</li>
+            <li>Global logistics support</li>
+            <li>Basel &amp; TFS notifications</li>
+          </ul>
+          <a href="#contact" class="card-link">View Details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="product-card">
-      <img class="pc-img" src="copper.jpg" alt="Copper & Wire" loading="lazy"/>
-      <div class="pc-header">
-        <div class="pc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <div><h3>Copper &amp; Wire</h3><p>Refined copper grades and wire processing</p></div>
-      </div>
-      <div class="pc-body">
-        <p>High-demand copper materials sourced, graded, and prepared for reintegration into manufacturing. We handle everything from low-grade mixed wire to No.1 bright copper.</p>
-        <ul class="tags"><li>No.1 Copper Wire</li><li>No.2 Copper Wire</li><li>Heavy Copper</li><li>Millberry Copper</li><li>Copper Turnings</li></ul>
-        <a href="#contact" class="card-link">Request availability <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img class="pc-img" src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80" alt="Lead & Batteries" loading="lazy"/>
-      <div class="pc-header">
-        <div class="pc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 20h10M7 20v-2a2 2 0 012-2h6a2 2 0 012 2v2M7 20H4a1 1 0 01-1-1V5a1 1 0 011-1h16a1 1 0 011 1v14a1 1 0 01-1 1h-3"/></svg></div>
-        <div><h3>Lead &amp; Batteries</h3><p>Battery scrap, lead bullion &amp; recovered lead</p></div>
-      </div>
-      <div class="pc-body">
-        <p>Responsible handling of lead-acid battery scrap and lead derivatives. Full traceability from collection to secondary refining, with environmental compliance at every step.</p>
-        <ul class="tags"><li>Battery Scrap</li><li>Lead Bullion</li><li>Lead Ingots</li><li>Lead Plates</li><li>Lead Oxides</li></ul>
-        <a href="#contact" class="card-link">Request availability <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img class="pc-img" src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80" alt="Raw Material Sourcing" loading="lazy"/>
-      <div class="pc-header">
-        <div class="pc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5"/></svg></div>
-        <div><h3>Raw Material Sourcing</h3><p>Global procurement of primary &amp; secondary metals</p></div>
-      </div>
-      <div class="pc-body">
-        <p>We leverage an extensive supplier network to source primary and secondary metal raw materials for manufacturers, traders, and processors who need reliable, quality-assured supply.</p>
-        <ul class="tags"><li>Primary Metals</li><li>Secondary Feedstock</li><li>Alloy Inputs</li><li>Metal Concentrates</li><li>Custom Sourcing</li></ul>
-        <a href="#contact" class="card-link">Discuss your needs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section id="services" class="sec">
-  <div class="sec-label">How We Work</div>
-  <div class="sec-title">Full-Cycle Metal Solutions</div>
-  <p class="sec-sub">We operate across the entire metal recycling and sourcing value chain, providing tailored solutions for producers, traders, and processors.</p>
-  <div class="services-grid">
-    <div class="svc-card"><div class="svc-num">01</div><h3>Collection &amp; Logistics</h3><p>We manage collection, transport, and delivery of scrap and processed metals across Greece and Europe, with full ADR and waste transport compliance.</p></div>
-    <div class="svc-card"><div class="svc-num">02</div><h3>Grading &amp; Inspection</h3><p>Thorough material inspection and content analysis for all traded commodities. Detailed reporting ensures quality, purity, and contractual compliance.</p></div>
-    <div class="svc-card"><div class="svc-num">03</div><h3>Import &amp; Export</h3><p>Active involvement in cross-border metal trading. We handle customs documentation, export licenses, and international logistics for efficient recovery and redistribution.</p></div>
-    <div class="svc-card"><div class="svc-num">04</div><h3>Raw Material Procurement</h3><p>Leveraging a network of European and global suppliers, we source specific metals and feedstocks for manufacturers who require reliable, spec-compliant supply.</p></div>
-    <div class="svc-card"><div class="svc-num">05</div><h3>Environmental Compliance</h3><p>We coordinate directly with competent authorities to ensure all collection, transport, and recovery activities comply with EU and national environmental law.</p></div>
-    <div class="svc-card"><div class="svc-num">06</div><h3>Consulting &amp; Advisory</h3><p>Expert guidance on metal waste classification, regulatory obligations, and optimising the commercial value of your waste streams and by-products.</p></div>
+<!-- ===== SUSTAINABILITY BANNER ===== -->
+<div class="sustain-bar">
+  <div class="sustain-left">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+    <div class="stext">Building Sustainable Trade.<br/>Delivering Value Worldwide.</div>
+  </div>
+  <div class="sustain-right">
+    <div class="sustain-item">
+      <div class="sustain-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path stroke-linecap="round" d="M3 20v-1a4 4 0 014-4h4a4 4 0 014 4v1M16 8a3 3 0 100 6M21 20v-1a3.5 3.5 0 00-3-3.5"/></svg></div>
+      <div class="sustain-text"><strong>Global Reach</strong><span>Supplying industries across 4 continents.</span></div>
+    </div>
+    <div class="sustain-item">
+      <div class="sustain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path stroke-linecap="round" d="M9 13l-2 8 5-3 5 3-2-8M10 9l1.5 1.5L15 7"/></svg></div>
+      <div class="sustain-text"><strong>Quality Focus</strong><span>Material quality matched to your requirements.</span></div>
+    </div>
+    <div class="sustain-item">
+      <div class="sustain-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-3-3-7-6-7-11a5 5 0 017-4.6A5 5 0 0119 10c0 5-4 8-7 11zM12 5v16"/></svg></div>
+      <div class="sustain-text"><strong>Sustainable Future</strong><span>Supporting the circular economy worldwide.</span></div>
+    </div>
+    <div class="sustain-item">
+      <div class="sustain-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l2 5-3 2a11 11 0 005 5l2-3 5 2v3a2 2 0 01-2 2c-9 0-17-8-17-14z"/></svg></div>
+      <div class="sustain-text"><strong>Trading Desk</strong><span>Get in touch for specifications, availability &amp; offers.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MARKETS ===== -->
+<section id="markets" class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Where We Operate</div>
+    <div class="sec-title">Markets We Serve</div>
+    <p class="sec-sub">Metalthlon supplies industrial buyers and partners across Europe, the Middle East, Asia, and the Americas — with logistics and compliance frameworks tailored to each region.</p>
+
+    <div class="markets-grid">
+      <div class="market-card">
+        <div class="region">Region 01</div>
+        <h4>Europe</h4>
+        <p>EU-licensed operator with established supplier networks across Greece, Italy, Germany, and the Balkans. Full waste-shipment regulation compliance.</p>
+      </div>
+      <div class="market-card">
+        <div class="region">Region 02</div>
+        <h4>Middle East &amp; Africa</h4>
+        <p>Active trading routes through Mediterranean ports. Long-standing partnerships with smelters and refineries across the MEA region.</p>
+      </div>
+      <div class="market-card">
+        <div class="region">Region 03</div>
+        <h4>Asia</h4>
+        <p>Established export channels to South and Southeast Asian secondary metal processors. Documentation aligned with destination-country import standards.</p>
+      </div>
+      <div class="market-card">
+        <div class="region">Region 04</div>
+        <h4>Americas</h4>
+        <p>Selective trade flows for non-ferrous and polymer materials, supported by international shipping partners and multi-currency invoicing.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="about" class="sec alt">
-  <div class="why-grid">
-    <div>
-      <div class="sec-label">Why Metalthlon</div>
-      <div class="sec-title">Built on Trust &amp; Precision</div>
-      <p class="sec-sub" style="margin-bottom:32px">We bring European-grade compliance, transparent pricing, and a hands-on approach to every transaction.</p>
-      <ul class="why-points">
-        <li class="why-point">
-          <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-          <div><strong>Full Compliance</strong><span>Environmental permits, waste transport documentation, and regulatory compliance in all jurisdictions we operate.</span></div>
-        </li>
-        <li class="why-point">
-          <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
-          <div><strong>Full Traceability</strong><span>Every shipment is documented from source to destination with detailed content analysis and quality reporting.</span></div>
-        </li>
-        <li class="why-point">
-          <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-          <div><strong>Long-term Partnerships</strong><span>We build relationships, not just transactions. Dedicated account managers and consistent pricing frameworks.</span></div>
-        </li>
-      </ul>
+<!-- ===== SERVICES ===== -->
+<section id="services" class="sec alt">
+  <div class="sec-inner">
+    <div class="sec-label">How We Work</div>
+    <div class="sec-title">Full-Cycle Trading Solutions</div>
+    <p class="sec-sub">We operate across the entire metal recycling and sourcing value chain, providing tailored solutions for producers, traders, and processors.</p>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-num">01</div><h3>Sourcing &amp; Procurement</h3><p>Leveraging an extensive supplier network across Europe and beyond to source primary and secondary materials matching exact buyer specifications.</p></div>
+      <div class="svc-card"><div class="svc-num">02</div><h3>Grading &amp; Inspection</h3><p>Thorough material inspection and content analysis for all traded commodities. Detailed reporting ensures quality, purity, and contractual compliance.</p></div>
+      <div class="svc-card"><div class="svc-num">03</div><h3>Import &amp; Export</h3><p>Active involvement in cross-border trading. We handle customs documentation, export licenses, and international logistics for efficient redistribution.</p></div>
+      <div class="svc-card"><div class="svc-num">04</div><h3>Basel &amp; TFS Compliance</h3><p>End-to-end management of notifications and consents for transboundary movement of waste batteries, RDF, and regulated streams under the Basel Convention.</p></div>
+      <div class="svc-card"><div class="svc-num">05</div><h3>Environmental Compliance</h3><p>Coordination with competent authorities to ensure all collection, transport, and recovery activities comply with EU and national environmental law.</p></div>
+      <div class="svc-card"><div class="svc-num">06</div><h3>Consulting &amp; Advisory</h3><p>Expert guidance on material classification, regulatory obligations, and optimising the commercial value of waste streams and by-products.</p></div>
     </div>
-    <div class="why-visual">
-      <div class="why-visual-title">By the Numbers</div>
-      <div class="metric-row">
-        <div class="metric"><div class="val">15<span>+</span></div><div class="label">Years in metals industry</div></div>
-        <div class="metric"><div class="val">30<span>+</span></div><div class="label">Active supplier network</div></div>
+  </div>
+</section>
+
+<!-- ===== COMPANY / BY THE NUMBERS — denser, with story timeline ===== -->
+<section id="company" class="sec">
+  <div class="sec-inner">
+    <div class="why-grid">
+      <div>
+        <div class="sec-label">The Company</div>
+        <div class="sec-title">Built on Trust &amp; Precision</div>
+        <p class="sec-sub" style="margin-bottom:32px">Metalthlon brings European-grade compliance, transparent pricing, and a hands-on approach to every transaction — from a single container to long-term framework agreements.</p>
+        <ul class="why-points">
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+            <div><strong>Full Compliance</strong><span>Environmental permits, waste transport documentation, and regulatory compliance in all jurisdictions we operate.</span></div>
+          </li>
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+            <div><strong>Full Traceability</strong><span>Every shipment is documented from source to destination with detailed content analysis and quality reporting.</span></div>
+          </li>
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+            <div><strong>Market Intelligence</strong><span>Real-time pricing insights and inventory positioning aligned with LME, ICIS and regional benchmarks.</span></div>
+          </li>
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <div><strong>Long-term Partnerships</strong><span>We build relationships, not just transactions. Dedicated account managers and consistent pricing frameworks.</span></div>
+          </li>
+        </ul>
       </div>
-      <div class="metric-row">
-        <div class="metric"><div class="val">100<span>%</span></div><div class="label">Documented shipments</div></div>
-        <div class="metric"><div class="val">EU</div><div class="label">Licensed operator</div></div>
+
+      <div class="numbers-panel">
+        <div class="numbers-title">By the Numbers</div>
+        <div class="numbers-grid">
+          <div class="num-cell"><div class="val">15<span>+</span></div><div class="label">Years in the metals industry</div></div>
+          <div class="num-cell"><div class="val">30<span>+</span></div><div class="label">Active supplier network</div></div>
+          <div class="num-cell"><div class="val">12K<span>+</span></div><div class="label">Tonnes traded annually</div></div>
+          <div class="num-cell"><div class="val">100<span>%</span></div><div class="label">Documented shipments</div></div>
+          <div class="num-cell"><div class="val">4</div><div class="label">Continents served</div></div>
+          <div class="num-cell"><div class="val">6</div><div class="label">Trading desks</div></div>
+          <div class="num-cell"><div class="val">EU</div><div class="label">Licensed operator</div></div>
+          <div class="num-cell"><div class="val">24<span>h</span></div><div class="label">Inquiry response time</div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== CTA BANNER ===== -->
 <div class="cta-banner">
-  <div>
-    <div class="cta-banner-label">Ready to Work Together?</div>
-    <div class="cta-banner-title">Request a Quote Today</div>
+  <div class="cta-banner-inner">
+    <div>
+      <div class="cta-banner-label">Ready to Work Together?</div>
+      <div class="cta-banner-title">Request a Quote Today</div>
+    </div>
+    <a href="#contact" class="cta-banner-btn">Get in Touch</a>
   </div>
-  <a href="#contact" class="cta-banner-btn">Get in Touch</a>
 </div>
 
+<!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="contact-wrap">
-    <div>
-      <div class="contact-label">Get in Touch</div>
-      <h2>Request a <em>Quote</em> or Inquiry</h2>
-      <p>Whether you have scrap to sell, materials to source, or just want to discuss how we can help — we respond to every inquiry within one business day.</p>
-      <div class="contact-details">
-        <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>info@metalthlon.com</div>
-        <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>+30 6985 550618</div>
-        <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>Athens, Greece</div>
+    <div class="contact-inner">
+      <div>
+        <div class="contact-label">Get in Touch</div>
+        <h2>Contact Our <em>Trading Desk</em></h2>
+        <p>Whether you have material to sell, specifications to source, or simply want to discuss how we can help — we respond to every inquiry within one business day.</p>
+        <div class="contact-details">
+          <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>info@metalthlon.com</div>
+          <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>+30 6985 550618</div>
+          <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>Athens, Greece</div>
+        </div>
       </div>
-    </div>
-    <div>
-      <form class="contact-form" onsubmit="sendMail(event)">
-        <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Nikos"/></div>
-          <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Papadopoulos"/></div>
-        </div>
-        <div class="form-group"><label>Company</label><input type="text" id="company" placeholder="Your company name"/></div>
-        <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="you@company.com"/></div>
-        <div class="form-group">
-          <label>I am interested in</label>
-          <select id="interest">
-            <option>Scrap Metal – Selling</option>
-            <option>Copper &amp; Wire – Buying/Selling</option>
-            <option>Lead &amp; Batteries – Selling</option>
-            <option>Raw Material Sourcing</option>
-            <option>Other / General Inquiry</option>
-          </select>
-        </div>
-        <div class="form-group"><label>Message</label><textarea rows="4" id="message" placeholder="Tell us about your material, quantity, and location…"></textarea></div>
-        <button type="submit" class="form-submit">Send Inquiry</button>
-      </form>
-      <script>
-      function sendMail(e) {
-        e.preventDefault();
-        var name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
-        var company = document.getElementById('company').value;
-        var email = document.getElementById('email').value;
-        var interest = document.getElementById('interest').value;
-        var message = document.getElementById('message').value;
-        var subject = 'Inquiry: ' + interest;
-        var body = 'Name: ' + name + '%0D%0ACompany: ' + company + '%0D%0AEmail: ' + email + '%0D%0AInterest: ' + interest + '%0D%0A%0D%0AMessage:%0D%0A' + message;
-        window.location.href = 'mailto:info@metalthlon.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-      }
-      </script>
+      <div>
+        <form class="contact-form" onsubmit="sendMail(event)">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" id="fname"/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="lname"/></div>
+          </div>
+          <div class="form-group"><label>Company</label><input type="text" id="company"/></div>
+          <div class="form-group"><label>Email</label><input type="email" id="email"/></div>
+          <div class="form-group">
+            <label>I am interested in</label>
+            <select id="interest">
+              <option>Aluminium &amp; Copper</option>
+              <option>Lead Materials</option>
+              <option>Recycled Plastics</option>
+              <option>Batteries (Basel)</option>
+              <option>RDF / SRF</option>
+              <option>Logistics &amp; Compliance</option>
+              <option>Other / General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea rows="4" id="message"></textarea></div>
+          <button type="submit" class="form-submit">Send Inquiry</button>
+        </form>
+        <script>
+        function sendMail(e) {
+          e.preventDefault();
+          var name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
+          var company = document.getElementById('company').value;
+          var email = document.getElementById('email').value;
+          var interest = document.getElementById('interest').value;
+          var message = document.getElementById('message').value;
+          var subject = 'Inquiry: ' + interest;
+          var body = 'Name: ' + name + '%0D%0ACompany: ' + company + '%0D%0AEmail: ' + email + '%0D%0AInterest: ' + interest + '%0D%0A%0D%0AMessage:%0D%0A' + message;
+          window.location.href = 'mailto:info@metalthlon.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+        }
+        </script>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ===== FOOTER (white bg → logo3.PNG which is on white) ===== -->
 <footer>
-  <div class="footer-logo"><svg width="22" height="18" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:6px;vertical-align:middle"><path d="M2 26V4l6 8 8-9 8 9 6-8v22h-4V14l-2 3-8-9-8 9-2-3v12z" fill="#B07D4A"/></svg>Metalth<span>lon</span></div>
-  <div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+  <div class="footer-inner">
+    <a href="#home" class="footer-logo">
+      <img src="./logo3.PNG" alt="Metalthlon"/>
+    </a>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#company">Company</a>
+      <a href="#markets">Markets</a>
+      <a href="#metals">Metals Desk</a>
+      <a href="#polymers">Polymers Desk</a>
+      <a href="#batteries">Batteries</a>
+      <a href="#rdf">RDF / SRF</a>
+      <a href="#logistics">Logistics</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-  <div class="footer-copy">&copy; 2025 Metalthlon. All rights reserved.</div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 Metalthlon. All rights reserved.</div>
+    <div>Strength. Value. Trust.</div>
+  </div>
 </footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.nav-links a');
+  var sections = ['home','company','markets','metals','polymers','batteries','rdf','logistics','contact'];
+  function updateActive(){
+    var pos = window.scrollY + 200;
+    var current = 'home';
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= pos){ current = id; }
+    });
+    links.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, {passive:true});
+})();
+</script>
+
 </body>
 </html>
